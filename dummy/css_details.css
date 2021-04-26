@@ -1,0 +1,78 @@
+        .details {
+            height: 400px;
+            background-color: #f5f6fc;
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .navmain{
+          background-color: #42455a;
+        }
+        .button{
+          color: black;
+        }
+        .button:hover{
+          color: black;
+          background-color: rgb(173, 173, 173);
+        }
+        .buttonlink{
+          color:black;
+        }
+        .buttonlink:hover{
+          color: rgb(173, 173, 173);
+        }
+        .desc{
+          padding-top: 10px;
+            padding-bottom: 50px;
+        }
+        .title{
+          font-family: 'Times New Roman', serif;
+        }
+        .author{
+          font-family: 'serif';
+        }
+        .genre{
+          font-family: 'serif'
+        }
+        .chap{
+        font-family: 'serif'
+        }
+        .read{
+          border-radius: 5px;;
+          border-style: solid;
+          border-spacing: 10px;;
+          outline-color: black;
+          color: black;
+          text-decoration: none;
+        }
+        .read:hover{
+          color: rgb(173, 173, 173);
+        }
+        .bottom{
+            text-align : center;
+            justify-content : center;
+            align-items : center;
+            padding-top : 40px;
+            color : white;
+        }
+        .foot{
+            height : 15d0px;
+            width : 100%;
+            align-items : center;
+            justify-content : center;
+            background-color : #42455a;
+        }
+        .logo{
+          height: 50px;
+          padding: 3px;
+          margin-right: 5px;
+        }

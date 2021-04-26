@@ -1,0 +1,100 @@
+        .genre {
+            height: 500px;
+            overflow-y: scroll;
+        }
+
+        .search {
+            height: 100px;
+            display: flex;
+
+
+        }
+
+        .logo {
+          height: 50px;
+          padding: 3px;
+          margin-right: 5px;;
+        }
+
+
+        .listitems {
+            width: 379px;
+            height: 210px;
+            padding: 10px;
+            margin: 2%;
+            box-sizing: border-box;
+            float: left;
+            list-style-type: none;
+        }
+
+        .genrelist {
+            padding-left: 5%;
+            list-style-type: none;
+        }
+
+        .tags {
+            width: 80%;
+            margin: 5%;
+            color: black;
+            border-color: rgba(173, 173, 173, 0.753);
+        }
+
+        .cover-img {
+            padding: 5px;
+            width: auto;
+            height: 185px;
+        }
+
+        .novelcard {
+            width: 100%;
+            height: 100%;
+            background: rgb(221, 221, 221);
+            border-color:lightgrey;
+        }
+
+        .pl0 {
+            padding-left: 0px;
+            height: 100%;
+            padding-bottom: 7%;
+            padding-right: 5%;
+        }
+
+        .author {
+            font-size: medium;
+        }
+
+        .details {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border-style: groove;
+            border-color: rgba(173, 173, 173, 0.753);
+            color: black;
+        }
+
+        .button {
+            margin-left: 10px;
+        }
+
+        .navmain {
+            background-color: #42455a;
+        }
+        .text{
+            border-radius: 5px;
+            border-color: rgba(173, 173, 173, 0.753);
+            border-style: double;
+        }
+        .bottom{
+            text-align : center;
+            justify-content : center;
+            align-items : center;
+            padding-top : 40px;
+            color : white;
+        }
+        .foot{
+            height : 15d0px;
+            width : 100%;
+            align-items : center;
+            justify-content : center;
+            background-color : #42455a;
+        }

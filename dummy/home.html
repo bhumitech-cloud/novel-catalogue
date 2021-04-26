@@ -8,88 +8,24 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="css_home.css">
     <title>Hello, world!</title>
 </head>
 
-<body>
-    <style>
-        .genre{
-            height: 1000px;
-            background-color: bisque;
-            overflow-y: scroll;
-        }
-        
-        .search{
-            height: 100px;
-            background: beige;
-            display: flex;
-            
-
-        }
-        .list{
-            background-color:azure;
-        }
-        
-
-        .listitems{
-            width: 379px;
-            height: 210px;
-            padding: 10px;
-            margin: 2%;
-            box-sizing: border-box;
-            float: left;
-            list-style-type: none;
-        }
-        
-        .genrelist{
-            padding-left: 5%;
-            list-style-type: none;
-        }
-        
-        .tags{
-            width:80%;
-            margin: 5%;
-        }
-        .cover-img{
-            padding: 5px;
-            width: auto;
-            height: 185px;
-        }
-        
-        .novelcard{
-            width: 100%;
-            height: 100%;
-        }
-        
-        .pl0{
-            padding-left: 0px;
-            height: 100%;
-            padding-bottom: 7%;
-            padding-right: 5%;
-        }
-        
-        .author{
-            font-size:medium;
-        }
-        
-        .details{
-            position: absolute;
-            bottom:   0;
-            right: 0;
-        }
-    </style>
+<body style="background-image: url('assets/bg4.jpg');background-repeat: no-repeat;background-size: cover;background-attachment: fixed;">
     <!--  Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark navmain">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Webnovels Catalogue</a>
+            <img class = "logo" src = 'assets/logo.png'>
+            <a class="navbar-brand" href="/">Webnovel Catalogue</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
@@ -104,942 +40,1005 @@
         </div>
     </nav>
     <!--   Search bar-->
-    <div class="container search justify-content-around align-items-center">
+    <div class="container search justify-content-center align-items-center">
         <form action="search">
-            <input type="search" placeholder="Title" aria-label="Title" name="term">  
-            <input type="search" placeholder="Author" aria-label="Author" name="author"> 
-            <input type="search" placeholder="Genre" aria-label="Genre"name="genre">
-            <button class="btn btn-outline-success" type="submit">Search</button>       
+            <input class="textbox text" type="search" placeholder="Title" aria-label="Title" name="term">
+            <input class="textbox text" type="search" placeholder="Author" aria-label="Author" name="author">
+            <input class="textbox text" type="search" placeholder="Genre" aria-label="Genre" name="genre">
+            <button class="btn btn-outline-secondary button" type="submit">Search</button>
         </form>
     </div>
     <!-- Main page-->
-    <div class="container" >
+    <div class="container bg">
         <div class="row">
             <div class="col-2 genre">
                 <ul class="genrelist">
                     <form action="genre">
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Sci-fi" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Romance" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Fantasy" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Video Games" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Action" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Teen" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Horror&Thriller" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Competitive Sports" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Martial Arts" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="War&Military" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="History" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Magic" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Reincarnation" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Secret Identity" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Comedy" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Strategy" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Villainous Lead" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Adventure" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Drama" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="GameLit" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Slice of Life" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Supernatural" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Horror" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Progression" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Cyberpunk" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Female Lead" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Male Lead" name="genre"></li>
-                    <li><input type="submit" class="btn btn-outline-primary tags" value="Dungeon" name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Sci-fi" name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Romance" name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Fantasy" name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Video Games" name="genre">
+                        </li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Action" name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Teen" name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Horror&Thriller"
+                                name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Competitive Sports"
+                                name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Martial Arts" name="genre">
+                        </li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="War&Military" name="genre">
+                        </li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="History" name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Magic" name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Reincarnation"
+                                name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Secret Identity"
+                                name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Comedy" name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Strategy" name="genre">
+                        </li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Villainous Lead"
+                                name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Adventure" name="genre">
+                        </li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Drama" name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="GameLit" name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Slice of Life"
+                                name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Supernatural" name="genre">
+                        </li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Horror" name="genre"></li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Progression" name="genre">
+                        </li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Cyberpunk" name="genre">
+                        </li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Female Lead" name="genre">
+                        </li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Male Lead" name="genre">
+                        </li>
+                        <li><input type="submit" class="btn btn-outline-secondary tags" value="Dungeon" name="genre"></li>
                     </form>
                 </ul>
             </div>
             <div class="col-10 list">
-                
-<ul>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/8022472105002805/300/300.jpg?coverUpdateTime=1547697670957'
-                        class="card-img-left cover-img" alt="Super Gene"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Super Gene</h6>
-                        <p class="card-subtitle author">Author:Twelve-Winged Dark Seraphim<br>Genre:Sci-fi</p>
 
-                        <a href="/details?id=1" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/14205835806705305/300/300.jpg?coverUpdateTime=1562232901411'
-                        class="card-img-left cover-img" alt="Married to the Devil&#x27;s Son"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Married to the Devil&#x27;s Son</h6>
-                        <p class="card-subtitle author">Author:JasmineJosef <br>Genre:Romance</p>
+                <ul>
 
-                        <a href="/details?id=2" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/8212987205006305/300/300.jpg?coverUpdateTime=1547686809014'
-                        class="card-img-left cover-img" alt="Trial Marriage Husband: Need to Work Hard"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Trial Marriage Husband: Need to Work Hard</h6>
-                        <p class="card-subtitle author">Author:Passion Honey <br>Genre:Contemporary Romance</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/8022472105002805/300/300.jpg?coverUpdateTime=1547697670957'
+                                        class="card-img-left cover-img" alt="Super Gene"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Super Gene</h6>
+                                        <p class="card-subtitle author">Author:Twelve-Winged Dark
+                                            Seraphim<br>Genre:Sci-fi</p>
 
-                        <a href="/details?id=3" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/16709365405930105/300/300.jpg?coverUpdateTime=1596687896010'
-                        class="card-img-left cover-img" alt="My Vampire System"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">My Vampire System</h6>
-                        <p class="card-subtitle author">Author:JKSManga <br>Genre:Fantasy</p>
+                                        <a href="/details?id=1" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=4" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/8527113906000305/300/300.jpg?coverUpdateTime=1547652621792'
-                        class="card-img-left cover-img" alt="Reincarnation Of The Strongest Sword God"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Reincarnation Of The Strongest Sword God</h6>
-                        <p class="card-subtitle author">Author:Lucky Old Cat <br>Genre:Video Games</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/14205835806705305/300/300.jpg?coverUpdateTime=1562232901411'
+                                        class="card-img-left cover-img" alt="Married to the Devil&#x27;s Son"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Married to the Devil&#x27;s Son</h6>
+                                        <p class="card-subtitle author">Author:JasmineJosef <br>Genre:Romance</p>
 
-                        <a href="/details?id=5" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/8060642606003005/300/300.jpg?coverUpdateTime=1553501078486'
-                        class="card-img-left cover-img" alt="Full Marks Hidden Marriage: Pick Up a Son, Get a Free Husband"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Full Marks Hidden Marriage: Pick Up a Son, Get a Free Husband</h6>
-                        <p class="card-subtitle author">Author:Jiong Jiong You Yao<br>Genre:Contemporary Romance</p>
+                                        <a href="/details?id=2" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=6" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/17319692206490105/300/300.jpg?coverUpdateTime=1614412409306'
-                        class="card-img-left cover-img" alt="The Crown&#x27;s Obsession"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">The Crown&#x27;s Obsession</h6>
-                        <p class="card-subtitle author">Author:ash_knight17 <br>Genre:Fantasy Romance</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/8212987205006305/300/300.jpg?coverUpdateTime=1547686809014'
+                                        class="card-img-left cover-img" alt="Trial Marriage Husband: Need to Work Hard">
+                                </div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Trial Marriage Husband: Need to Work Hard</h6>
+                                        <p class="card-subtitle author">Author:Passion Honey <br>Genre:Contemporary
+                                            Romance</p>
 
-                        <a href="/details?id=7" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/8662546605001405/300/300.jpg?coverUpdateTime=1547697741756'
-                        class="card-img-left cover-img" alt="The Legendary Mechanic"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">The Legendary Mechanic</h6>
-                        <p class="card-subtitle author">Author:Qi Peijia<br>Genre:Video Games</p>
+                                        <a href="/details?id=3" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=8" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/12820870105509205/300/300.jpg?coverUpdateTime=1611865135841'
-                        class="card-img-left cover-img" alt="Supreme Magus"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Supreme Magus</h6>
-                        <p class="card-subtitle author">Author:Legion20 <br>Genre:Fantasy</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/16709365405930105/300/300.jpg?coverUpdateTime=1596687896010'
+                                        class="card-img-left cover-img" alt="My Vampire System"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">My Vampire System</h6>
+                                        <p class="card-subtitle author">Author:JKSManga <br>Genre:Fantasy</p>
 
-                        <a href="/details?id=9" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/18549008105094005/300/300.jpg?coverUpdateTime=1612387837681'
-                        class="card-img-left cover-img" alt="Cultivation Online"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Cultivation Online</h6>
-                        <p class="card-subtitle author">Author:MyLittleBrother <br>Genre:Video Games</p>
+                                        <a href="/details?id=4" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=10" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/11793789806524505/300/300.jpg?coverUpdateTime=1612010337752'
-                        class="card-img-left cover-img" alt="Dual Cultivation"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Dual Cultivation</h6>
-                        <p class="card-subtitle author">Author:MyLittleBrother <br>Genre:Eastern Fantasy</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/8527113906000305/300/300.jpg?coverUpdateTime=1547652621792'
+                                        class="card-img-left cover-img" alt="Reincarnation Of The Strongest Sword God">
+                                </div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Reincarnation Of The Strongest Sword God</h6>
+                                        <p class="card-subtitle author">Author:Lucky Old Cat <br>Genre:Video Games</p>
 
-                        <a href="/details?id=11" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/14187175405584205/300/300.jpg?coverUpdateTime=1590518923643'
-                        class="card-img-left cover-img" alt="Birth of the Demonic Sword"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Birth of the Demonic Sword</h6>
-                        <p class="card-subtitle author">Author:Eveofchaos <br>Genre:Eastern Fantasy</p>
+                                        <a href="/details?id=5" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=12" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/16699683105884505/300/300.jpg?coverUpdateTime=1614227671358'
-                        class="card-img-left cover-img" alt="Hellbound With You"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Hellbound With You</h6>
-                        <p class="card-subtitle author">Author:KazzenlX <br>Genre:Fantasy Romance</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/8060642606003005/300/300.jpg?coverUpdateTime=1553501078486'
+                                        class="card-img-left cover-img"
+                                        alt="Full Marks Hidden Marriage: Pick Up a Son, Get a Free Husband"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Full Marks Hidden Marriage: Pick Up a Son, Get a Free
+                                            Husband</h6>
+                                        <p class="card-subtitle author">Author:Jiong Jiong You Yao<br>Genre:Contemporary
+                                            Romance</p>
 
-                        <a href="/details?id=13" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/12507300405677105/300/300.jpg?coverUpdateTime=1573776854278'
-                        class="card-img-left cover-img" alt="The Forgotten Princess"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">The Forgotten Princess</h6>
-                        <p class="card-subtitle author">Author:Les01 <br>Genre:Historical Romance</p>
+                                        <a href="/details?id=6" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=14" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/12700758805688005/300/300.jpg?coverUpdateTime=1615144662166'
-                        class="card-img-left cover-img" alt="Young master Damien&#x27;s pet"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Young master Damien&#x27;s pet</h6>
-                        <p class="card-subtitle author">Author:ash_knight17 <br>Genre:Fantasy Romance</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/17319692206490105/300/300.jpg?coverUpdateTime=1614412409306'
+                                        class="card-img-left cover-img" alt="The Crown&#x27;s Obsession"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">The Crown&#x27;s Obsession</h6>
+                                        <p class="card-subtitle author">Author:ash_knight17 <br>Genre:Fantasy Romance
+                                        </p>
 
-                        <a href="/details?id=15" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/16731346305020705/300/300.jpg?coverUpdateTime=1590743474694'
-                        class="card-img-left cover-img" alt="Beauty and the Beasts"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Beauty and the Beasts</h6>
-                        <p class="card-subtitle author">Author:White-Headed Dream <br>Genre:Fantasy Romance</p>
+                                        <a href="/details?id=7" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=16" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/11256254105313805/300/300.jpg?coverUpdateTime=1550543032076'
-                        class="card-img-left cover-img" alt="The Beautiful Wife of the Whirlwind Marriage"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">The Beautiful Wife of the Whirlwind Marriage</h6>
-                        <p class="card-subtitle author">Author:Bath Robey<br>Genre:Contemporary Romance</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/8662546605001405/300/300.jpg?coverUpdateTime=1547697741756'
+                                        class="card-img-left cover-img" alt="The Legendary Mechanic"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">The Legendary Mechanic</h6>
+                                        <p class="card-subtitle author">Author:Qi Peijia<br>Genre:Video Games</p>
 
-                        <a href="/details?id=17" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/10260480905004505/300/300.jpg?coverUpdateTime=1570787184321'
-                        class="card-img-left cover-img" alt="My Youth Began With Him"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">My Youth Began With Him</h6>
-                        <p class="card-subtitle author">Author:Baby Piggie <br>Genre:Contemporary Romance</p>
+                                        <a href="/details?id=8" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=18" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/10636300105085505/300/300.jpg?coverUpdateTime=1603037957326'
-                        class="card-img-left cover-img" alt="The Mech Touch"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">The Mech Touch</h6>
-                        <p class="card-subtitle author">Author:Exlor <br>Genre:Sci-fi</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/12820870105509205/300/300.jpg?coverUpdateTime=1611865135841'
+                                        class="card-img-left cover-img" alt="Supreme Magus"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Supreme Magus</h6>
+                                        <p class="card-subtitle author">Author:Legion20 <br>Genre:Fantasy</p>
 
-                        <a href="/details?id=19" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/14064812306272705/300/300.jpg?coverUpdateTime=1608233544514'
-                        class="card-img-left cover-img" alt="Nanomancer Reborn - I&#x27;ve Become A Snow Girl?"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Nanomancer Reborn - I&#x27;ve Become A Snow Girl?</h6>
-                        <p class="card-subtitle author">Author:Reili <br>Genre:Fantasy Romance</p>
+                                        <a href="/details?id=9" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=20" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/15962877405536805/300/300.jpg?coverUpdateTime=1594979281691'
-                        class="card-img-left cover-img" alt="Ma&#x27;am You Have Been Uncovered"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Ma&#x27;am You Have Been Uncovered</h6>
-                        <p class="card-subtitle author">Author:Road of Flowers <br>Genre:Contemporary Romance</p>
+                    <li class="listitems">
+                        <div class="card  mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/18549008105094005/300/300.jpg?coverUpdateTime=1612387837681'
+                                        class="card-img-left cover-img" alt="Cultivation Online"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Cultivation Online</h6>
+                                        <p class="card-subtitle author">Author:MyLittleBrother <br>Genre:Video Games</p>
 
-                        <a href="/details?id=21" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/6831850602000905/300/300.jpg?coverUpdateTime=1600167042546'
-                        class="card-img-left cover-img" alt="Library of Heaven&#x27;s Path"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Library of Heaven&#x27;s Path</h6>
-                        <p class="card-subtitle author">Author:Heng Sao Tian Ya<br>Genre:Eastern Fantasy</p>
+                                        <a href="/details?id=10" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=22" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/16005365905643805/300/300.jpg?coverUpdateTime=1588315780715'
-                        class="card-img-left cover-img" alt="Mages Are Too OP"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Mages Are Too OP</h6>
-                        <p class="card-subtitle author">Author:Soaring Flames <br>Genre:Video Games</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/11793789806524505/300/300.jpg?coverUpdateTime=1612010337752'
+                                        class="card-img-left cover-img" alt="Dual Cultivation"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Dual Cultivation</h6>
+                                        <p class="card-subtitle author">Author:MyLittleBrother <br>Genre:Eastern Fantasy
+                                        </p>
 
-                        <a href="/details?id=23" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/16709186806051905/300/300.jpg?coverUpdateTime=1610490920559'
-                        class="card-img-left cover-img" alt="Infinite Mana in the Apocalypse"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Infinite Mana in the Apocalypse</h6>
-                        <p class="card-subtitle author">Author:dui <br>Genre:Video Games</p>
+                                        <a href="/details?id=11" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=24" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/8600631606000605/300/300.jpg?coverUpdateTime=1555666527925'
-                        class="card-img-left cover-img" alt="Perfect Secret Love: The Bad New Wife is a Little Sweet"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Perfect Secret Love: The Bad New Wife is a Little Sweet</h6>
-                        <p class="card-subtitle author">Author:Jiong Jiong You Yao<br>Genre:Contemporary Romance</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/14187175405584205/300/300.jpg?coverUpdateTime=1590518923643'
+                                        class="card-img-left cover-img" alt="Birth of the Demonic Sword"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Birth of the Demonic Sword</h6>
+                                        <p class="card-subtitle author">Author:Eveofchaos <br>Genre:Eastern Fantasy</p>
 
-                        <a href="/details?id=25" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/17766698905784705/300/300.jpg?coverUpdateTime=1617173170652'
-                        class="card-img-left cover-img" alt="Monarch of Time"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Monarch of Time</h6>
-                        <p class="card-subtitle author">Author:ZeusTheOlympian <br>Genre:Eastern Fantasy</p>
+                                        <a href="/details?id=12" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=26" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/6838665602003405/300/300.jpg?coverUpdateTime=1547625611949'
-                        class="card-img-left cover-img" alt="Gourmet of Another World"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Gourmet of Another World</h6>
-                        <p class="card-subtitle author">Author:Li Hongtian<br>Genre:Eastern Fantasy</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/16699683105884505/300/300.jpg?coverUpdateTime=1614227671358'
+                                        class="card-img-left cover-img" alt="Hellbound With You"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Hellbound With You</h6>
+                                        <p class="card-subtitle author">Author:KazzenlX <br>Genre:Fantasy Romance</p>
 
-                        <a href="/details?id=27" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/11806267105539605/300/300.jpg?coverUpdateTime=1566805265456'
-                        class="card-img-left cover-img" alt="Reincarnation Of The Businesswoman At School"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Reincarnation Of The Businesswoman At School</h6>
-                        <p class="card-subtitle author">Author:Warm Color Su<br>Genre:Contemporary Romance</p>
+                                        <a href="/details?id=13" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=28" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/14389908706273205/300/300.jpg?coverUpdateTime=1588916364600'
-                        class="card-img-left cover-img" alt="Run, Girl (If You Can)"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Run, Girl (If You Can)</h6>
-                        <p class="card-subtitle author">Author:Mcllorycat <br>Genre:Fantasy Romance</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/12507300405677105/300/300.jpg?coverUpdateTime=1573776854278'
+                                        class="card-img-left cover-img" alt="The Forgotten Princess"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">The Forgotten Princess</h6>
+                                        <p class="card-subtitle author">Author:Les01 <br>Genre:Historical Romance</p>
 
-                        <a href="/details?id=29" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/7931338406001705/300/300.jpg?coverUpdateTime=1547692288593'
-                        class="card-img-left cover-img" alt="Release That Witch"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Release That Witch</h6>
-                        <p class="card-subtitle author">Author:Er Mu<br>Genre:Fantasy</p>
+                                        <a href="/details?id=14" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=30" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/12507348206677105/300/300.jpg?coverUpdateTime=1550542497780'
-                        class="card-img-left cover-img" alt="Only I Level Up (Solo Leveling)"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Only I Level Up (Solo Leveling)</h6>
-                        <p class="card-subtitle author">Author:추공 (Chugong) <br>Genre:Magical Realism</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/12700758805688005/300/300.jpg?coverUpdateTime=1615144662166'
+                                        class="card-img-left cover-img" alt="Young master Damien&#x27;s pet"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Young master Damien&#x27;s pet</h6>
+                                        <p class="card-subtitle author">Author:ash_knight17 <br>Genre:Fantasy Romance
+                                        </p>
 
-                        <a href="/details?id=31" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/11806186606531405/300/300.jpg?coverUpdateTime=1551760008762'
-                        class="card-img-left cover-img" alt="One Birth Two Treasures: The Billionaire&#x27;s Sweet Love"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">One Birth Two Treasures: The Billionaire&#x27;s Sweet Love</h6>
-                        <p class="card-subtitle author">Author:Beauty Under the Moon<br>Genre:Contemporary Romance</p>
+                                        <a href="/details?id=15" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=32" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/17711949906610105/300/300.jpg?coverUpdateTime=1615124505383'
-                        class="card-img-left cover-img" alt="The Great Demon System"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">The Great Demon System</h6>
-                        <p class="card-subtitle author">Author:Drip <br>Genre:Fantasy</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/16731346305020705/300/300.jpg?coverUpdateTime=1590743474694'
+                                        class="card-img-left cover-img" alt="Beauty and the Beasts"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Beauty and the Beasts</h6>
+                                        <p class="card-subtitle author">Author:White-Headed Dream <br>Genre:Fantasy
+                                            Romance</p>
 
-                        <a href="/details?id=33" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/16768544305170805/300/300.jpg?coverUpdateTime=1613908125310'
-                        class="card-img-left cover-img" alt="The Law of Attraction"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">The Law of Attraction</h6>
-                        <p class="card-subtitle author">Author:EUSTOMA_reyna <br>Genre:Contemporary Romance</p>
+                                        <a href="/details?id=16" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=34" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/12749523606078605/300/300.jpg?coverUpdateTime=1600923681478'
-                        class="card-img-left cover-img" alt="Monster Integration"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Monster Integration</h6>
-                        <p class="card-subtitle author">Author:nWan <br>Genre:Fantasy</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/11256254105313805/300/300.jpg?coverUpdateTime=1550543032076'
+                                        class="card-img-left cover-img"
+                                        alt="The Beautiful Wife of the Whirlwind Marriage"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">The Beautiful Wife of the Whirlwind Marriage</h6>
+                                        <p class="card-subtitle author">Author:Bath Robey<br>Genre:Contemporary Romance
+                                        </p>
 
-                        <a href="/details?id=35" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/8360425206000005/300/300.jpg?coverUpdateTime=1557127846399'
-                        class="card-img-left cover-img" alt="Bringing the Nation&#x27;s Husband Home"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Bringing the Nation&#x27;s Husband Home</h6>
-                        <p class="card-subtitle author">Author:Ye Fei Ye<br>Genre:Contemporary Romance</p>
+                                        <a href="/details?id=17" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=36" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/16732928106157405/300/300.jpg?coverUpdateTime=1592907724709'
-                        class="card-img-left cover-img" alt="Astral Pet Store"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Astral Pet Store</h6>
-                        <p class="card-subtitle author">Author:ncient Xi <br>Genre:Eastern Fantasy</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/10260480905004505/300/300.jpg?coverUpdateTime=1570787184321'
+                                        class="card-img-left cover-img" alt="My Youth Began With Him"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">My Youth Began With Him</h6>
+                                        <p class="card-subtitle author">Author:Baby Piggie <br>Genre:Contemporary
+                                            Romance</p>
 
-                        <a href="/details?id=37" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/9484255206002505/300/300.jpg?coverUpdateTime=1547643657959'
-                        class="card-img-left cover-img" alt="National School Prince Is A Girl"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">National School Prince Is A Girl</h6>
-                        <p class="card-subtitle author">Author:Warring Young Seven<br>Genre:Teen</p>
+                                        <a href="/details?id=18" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=38" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/8299599706003805/300/300.jpg?coverUpdateTime=1547679298874'
-                        class="card-img-left cover-img" alt="Cultivation Chat Group"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Cultivation Chat Group</h6>
-                        <p class="card-subtitle author">Author:Legend of the Paladin<br>Genre:Magical Realism</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/10636300105085505/300/300.jpg?coverUpdateTime=1603037957326'
+                                        class="card-img-left cover-img" alt="The Mech Touch"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">The Mech Touch</h6>
+                                        <p class="card-subtitle author">Author:Exlor <br>Genre:Sci-fi</p>
 
-                        <a href="/details?id=39" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/17340518006576905/300/300.jpg?coverUpdateTime=1613942753053'
-                        class="card-img-left cover-img" alt="Death... and me"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Death... and me</h6>
-                        <p class="card-subtitle author">Author:Suiyan <br>Genre:Fantasy</p>
+                                        <a href="/details?id=19" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=40" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/8534263705001005/300/300.jpg?coverUpdateTime=1548384764944'
-                        class="card-img-left cover-img" alt="It&#x27;s Not Easy to Be a Man After Travelling to the Future"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">It&#x27;s Not Easy to Be a Man After Travelling to the Future</h6>
-                        <p class="card-subtitle author">Author:Madam Ru<br>Genre:Sci-fi Romance</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/14064812306272705/300/300.jpg?coverUpdateTime=1608233544514'
+                                        class="card-img-left cover-img"
+                                        alt="Nanomancer Reborn - I&#x27;ve Become A Snow Girl?"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Nanomancer Reborn - I&#x27;ve Become A Snow Girl?</h6>
+                                        <p class="card-subtitle author">Author:Reili <br>Genre:Fantasy Romance</p>
 
-                        <a href="/details?id=41" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/8456930206000105/300/300.jpg?coverUpdateTime=1553770797972'
-                        class="card-img-left cover-img" alt="Mr. CEO, Spoil me 100 Percent!"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Mr. CEO, Spoil me 100 Percent!</h6>
-                        <p class="card-subtitle author">Author:The Courtesan&#x27;s Smile<br>Genre:Contemporary Romance</p>
+                                        <a href="/details?id=20" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=42" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/11806202505539105/300/300.jpg?coverUpdateTime=1557114814423'
-                        class="card-img-left cover-img" alt="Rebirth to a Military Marriage: Good Morning Chief"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Rebirth to a Military Marriage: Good Morning Chief</h6>
-                        <p class="card-subtitle author">Author:Brocade Star of Love<br>Genre:Contemporary Romance</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/15962877405536805/300/300.jpg?coverUpdateTime=1594979281691'
+                                        class="card-img-left cover-img" alt="Ma&#x27;am You Have Been Uncovered"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Ma&#x27;am You Have Been Uncovered</h6>
+                                        <p class="card-subtitle author">Author:Road of Flowers <br>Genre:Contemporary
+                                            Romance</p>
 
-                        <a href="/details?id=43" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/18427260505628805/300/300.jpg?coverUpdateTime=1604314234321'
-                        class="card-img-left cover-img" alt="I&#x27;m Actually a Cultivation Bigshot"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">I&#x27;m Actually a Cultivation Bigshot</h6>
-                        <p class="card-subtitle author">Author:Kinoshita Nakui<br>Genre:Eastern Fantasy</p>
+                                        <a href="/details?id=21" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=44" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/7851773505001805/300/300.jpg?coverUpdateTime=1548124490779'
-                        class="card-img-left cover-img" alt="Versatile Mage"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Versatile Mage</h6>
-                        <p class="card-subtitle author">Author:Chaos<br>Genre:Fantasy</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/6831850602000905/300/300.jpg?coverUpdateTime=1600167042546'
+                                        class="card-img-left cover-img" alt="Library of Heaven&#x27;s Path"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Library of Heaven&#x27;s Path</h6>
+                                        <p class="card-subtitle author">Author:Heng Sao Tian Ya<br>Genre:Eastern Fantasy
+                                        </p>
 
-                        <a href="/details?id=45" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/17763560106904805/300/300.jpg?coverUpdateTime=1613015616777'
-                        class="card-img-left cover-img" alt="My Pick Up Artist System"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">My Pick Up Artist System</h6>
-                        <p class="card-subtitle author">Author:SamsaraWithWords <br>Genre:Magical Realism</p>
+                                        <a href="/details?id=22" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=46" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/14869533705896705/300/300.jpg?coverUpdateTime=1608490690336'
-                        class="card-img-left cover-img" alt="Rise of the Demon God"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Rise of the Demon God</h6>
-                        <p class="card-subtitle author">Author:Demonic_angel <br>Genre:Eastern Fantasy</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/16005365905643805/300/300.jpg?coverUpdateTime=1588315780715'
+                                        class="card-img-left cover-img" alt="Mages Are Too OP"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Mages Are Too OP</h6>
+                                        <p class="card-subtitle author">Author:Soaring Flames <br>Genre:Video Games</p>
 
-                        <a href="/details?id=47" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/18917793906717305/300/300.jpg?coverUpdateTime=1609221577862'
-                        class="card-img-left cover-img" alt="The Challenger&#x27;s Return: Rebirth of the Rainbow Mage"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">The Challenger&#x27;s Return: Rebirth of the Rainbow Mage</h6>
-                        <p class="card-subtitle author">Author:NightWind <br>Genre:Video Games</p>
+                                        <a href="/details?id=23" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <a href="/details?id=48" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-    <li class="listitems">
-        <div class="card border-dark mb-3 novelcard">
-            <div class="row">
-                <div class="col-5"><img
-                        src='https://img.webnovel.com/bookcover/18869780605377605/300/300.jpg?coverUpdateTime=1609345394780'
-                        class="card-img-left cover-img" alt="Unlimited Power 02 - The Ranger&#x27;s Domain"></div>
-                <div class="col-7 pl0">
-                    <div class="card-body pl0" style="position: relative;">
-                        <h6 class="card-title">Unlimited Power 02 - The Ranger&#x27;s Domain</h6>
-                        <p class="card-subtitle author">Author:ExSoldierLv99 <br>Genre:Fantasy</p>
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/16709186806051905/300/300.jpg?coverUpdateTime=1610490920559'
+                                        class="card-img-left cover-img" alt="Infinite Mana in the Apocalypse"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Infinite Mana in the Apocalypse</h6>
+                                        <p class="card-subtitle author">Author:dui <br>Genre:Video Games</p>
 
-                        <a href="/details?id=49" class="btn btn-outline-primary details">Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    
-</ul>
+                                        <a href="/details?id=24" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/8600631606000605/300/300.jpg?coverUpdateTime=1555666527925'
+                                        class="card-img-left cover-img"
+                                        alt="Perfect Secret Love: The Bad New Wife is a Little Sweet"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Perfect Secret Love: The Bad New Wife is a Little Sweet
+                                        </h6>
+                                        <p class="card-subtitle author">Author:Jiong Jiong You Yao<br>Genre:Contemporary
+                                            Romance</p>
+
+                                        <a href="/details?id=25" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/17766698905784705/300/300.jpg?coverUpdateTime=1617173170652'
+                                        class="card-img-left cover-img" alt="Monarch of Time"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Monarch of Time</h6>
+                                        <p class="card-subtitle author">Author:ZeusTheOlympian <br>Genre:Eastern Fantasy
+                                        </p>
+
+                                        <a href="/details?id=26" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/6838665602003405/300/300.jpg?coverUpdateTime=1547625611949'
+                                        class="card-img-left cover-img" alt="Gourmet of Another World"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Gourmet of Another World</h6>
+                                        <p class="card-subtitle author">Author:Li Hongtian<br>Genre:Eastern Fantasy</p>
+
+                                        <a href="/details?id=27" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/11806267105539605/300/300.jpg?coverUpdateTime=1566805265456'
+                                        class="card-img-left cover-img"
+                                        alt="Reincarnation Of The Businesswoman At School"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Reincarnation Of The Businesswoman At School</h6>
+                                        <p class="card-subtitle author">Author:Warm Color Su<br>Genre:Contemporary
+                                            Romance</p>
+
+                                        <a href="/details?id=28" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/14389908706273205/300/300.jpg?coverUpdateTime=1588916364600'
+                                        class="card-img-left cover-img" alt="Run, Girl (If You Can)"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Run, Girl (If You Can)</h6>
+                                        <p class="card-subtitle author">Author:Mcllorycat <br>Genre:Fantasy Romance</p>
+
+                                        <a href="/details?id=29" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/7931338406001705/300/300.jpg?coverUpdateTime=1547692288593'
+                                        class="card-img-left cover-img" alt="Release That Witch"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Release That Witch</h6>
+                                        <p class="card-subtitle author">Author:Er Mu<br>Genre:Fantasy</p>
+
+                                        <a href="/details?id=30" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/12507348206677105/300/300.jpg?coverUpdateTime=1550542497780'
+                                        class="card-img-left cover-img" alt="Only I Level Up (Solo Leveling)"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Only I Level Up (Solo Leveling)</h6>
+                                        <p class="card-subtitle author">Author:추공 (Chugong) <br>Genre:Magical Realism
+                                        </p>
+
+                                        <a href="/details?id=31" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/11806186606531405/300/300.jpg?coverUpdateTime=1551760008762'
+                                        class="card-img-left cover-img"
+                                        alt="One Birth Two Treasures: The Billionaire&#x27;s Sweet Love"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">One Birth Two Treasures: The Billionaire&#x27;s Sweet
+                                            Love</h6>
+                                        <p class="card-subtitle author">Author:Beauty Under the
+                                            Moon<br>Genre:Contemporary Romance</p>
+
+                                        <a href="/details?id=32" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/17711949906610105/300/300.jpg?coverUpdateTime=1615124505383'
+                                        class="card-img-left cover-img" alt="The Great Demon System"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">The Great Demon System</h6>
+                                        <p class="card-subtitle author">Author:Drip <br>Genre:Fantasy</p>
+
+                                        <a href="/details?id=33" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/16768544305170805/300/300.jpg?coverUpdateTime=1613908125310'
+                                        class="card-img-left cover-img" alt="The Law of Attraction"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">The Law of Attraction</h6>
+                                        <p class="card-subtitle author">Author:EUSTOMA_reyna <br>Genre:Contemporary
+                                            Romance</p>
+
+                                        <a href="/details?id=34" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/12749523606078605/300/300.jpg?coverUpdateTime=1600923681478'
+                                        class="card-img-left cover-img" alt="Monster Integration"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Monster Integration</h6>
+                                        <p class="card-subtitle author">Author:nWan <br>Genre:Fantasy</p>
+
+                                        <a href="/details?id=35" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/8360425206000005/300/300.jpg?coverUpdateTime=1557127846399'
+                                        class="card-img-left cover-img" alt="Bringing the Nation&#x27;s Husband Home">
+                                </div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Bringing the Nation&#x27;s Husband Home</h6>
+                                        <p class="card-subtitle author">Author:Ye Fei Ye<br>Genre:Contemporary Romance
+                                        </p>
+
+                                        <a href="/details?id=36" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 bnovelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/16732928106157405/300/300.jpg?coverUpdateTime=1592907724709'
+                                        class="card-img-left cover-img" alt="Astral Pet Store"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Astral Pet Store</h6>
+                                        <p class="card-subtitle author">Author:ncient Xi <br>Genre:Eastern Fantasy</p>
+
+                                        <a href="/details?id=37" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/9484255206002505/300/300.jpg?coverUpdateTime=1547643657959'
+                                        class="card-img-left cover-img" alt="National School Prince Is A Girl"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">National School Prince Is A Girl</h6>
+                                        <p class="card-subtitle author">Author:Warring Young Seven<br>Genre:Teen</p>
+
+                                        <a href="/details?id=38" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/8299599706003805/300/300.jpg?coverUpdateTime=1547679298874'
+                                        class="card-img-left cover-img" alt="Cultivation Chat Group"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Cultivation Chat Group</h6>
+                                        <p class="card-subtitle author">Author:Legend of the Paladin<br>Genre:Magical
+                                            Realism</p>
+
+                                        <a href="/details?id=39" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/17340518006576905/300/300.jpg?coverUpdateTime=1613942753053'
+                                        class="card-img-left cover-img" alt="Death... and me"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Death... and me</h6>
+                                        <p class="card-subtitle author">Author:Suiyan <br>Genre:Fantasy</p>
+
+                                        <a href="/details?id=40" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/8534263705001005/300/300.jpg?coverUpdateTime=1548384764944'
+                                        class="card-img-left cover-img"
+                                        alt="It&#x27;s Not Easy to Be a Man After Travelling to the Future"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">It&#x27;s Not Easy to Be a Man After Travelling to the
+                                            Future</h6>
+                                        <p class="card-subtitle author">Author:Madam Ru<br>Genre:Sci-fi Romance</p>
+
+                                        <a href="/details?id=41" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/8456930206000105/300/300.jpg?coverUpdateTime=1553770797972'
+                                        class="card-img-left cover-img" alt="Mr. CEO, Spoil me 100 Percent!"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Mr. CEO, Spoil me 100 Percent!</h6>
+                                        <p class="card-subtitle author">Author:The Courtesan&#x27;s
+                                            Smile<br>Genre:Contemporary Romance</p>
+
+                                        <a href="/details?id=42" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/11806202505539105/300/300.jpg?coverUpdateTime=1557114814423'
+                                        class="card-img-left cover-img"
+                                        alt="Rebirth to a Military Marriage: Good Morning Chief"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Rebirth to a Military Marriage: Good Morning Chief</h6>
+                                        <p class="card-subtitle author">Author:Brocade Star of
+                                            Love<br>Genre:Contemporary Romance</p>
+
+                                        <a href="/details?id=43" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/18427260505628805/300/300.jpg?coverUpdateTime=1604314234321'
+                                        class="card-img-left cover-img" alt="I&#x27;m Actually a Cultivation Bigshot">
+                                </div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">I&#x27;m Actually a Cultivation Bigshot</h6>
+                                        <p class="card-subtitle author">Author:Kinoshita Nakui<br>Genre:Eastern Fantasy
+                                        </p>
+
+                                        <a href="/details?id=44" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/7851773505001805/300/300.jpg?coverUpdateTime=1548124490779'
+                                        class="card-img-left cover-img" alt="Versatile Mage"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Versatile Mage</h6>
+                                        <p class="card-subtitle author">Author:Chaos<br>Genre:Fantasy</p>
+
+                                        <a href="/details?id=45" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/17763560106904805/300/300.jpg?coverUpdateTime=1613015616777'
+                                        class="card-img-left cover-img" alt="My Pick Up Artist System"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">My Pick Up Artist System</h6>
+                                        <p class="card-subtitle author">Author:SamsaraWithWords <br>Genre:Magical
+                                            Realism</p>
+
+                                        <a href="/details?id=46" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/14869533705896705/300/300.jpg?coverUpdateTime=1608490690336'
+                                        class="card-img-left cover-img" alt="Rise of the Demon God"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Rise of the Demon God</h6>
+                                        <p class="card-subtitle author">Author:Demonic_angel <br>Genre:Eastern Fantasy
+                                        </p>
+
+                                        <a href="/details?id=47" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/18917793906717305/300/300.jpg?coverUpdateTime=1609221577862'
+                                        class="card-img-left cover-img"
+                                        alt="The Challenger&#x27;s Return: Rebirth of the Rainbow Mage"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">The Challenger&#x27;s Return: Rebirth of the Rainbow Mage
+                                        </h6>
+                                        <p class="card-subtitle author">Author:NightWind <br>Genre:Video Games</p>
+
+                                        <a href="/details?id=48" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="listitems">
+                        <div class="card mb-3 novelcard">
+                            <div class="row">
+                                <div class="col-5"><img
+                                        src='https://img.webnovel.com/bookcover/18869780605377605/300/300.jpg?coverUpdateTime=1609345394780'
+                                        class="card-img-left cover-img"
+                                        alt="Unlimited Power 02 - The Ranger&#x27;s Domain"></div>
+                                <div class="col-7 pl0">
+                                    <div class="card-body pl0" style="position: relative;">
+                                        <h6 class="card-title">Unlimited Power 02 - The Ranger&#x27;s Domain</h6>
+                                        <p class="card-subtitle author">Author:ExSoldierLv99 <br>Genre:Fantasy</p>
+
+                                        <a href="/details?id=49" class="btn btn-outline-secondary details">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
 
             </div>
         </div>
     </div>
+    <div class="row foot">
+        <h1 class="bottom">Webnovel Catalogue</h1>
+    </div>
+
     <!--footer-->
 
     <!-- Optional JavaScript; choose one of the two! -->
